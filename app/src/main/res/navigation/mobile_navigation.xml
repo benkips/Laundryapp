@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/launcherscreen">
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.mamafua.app.fragments.Home"
+        android:label="Mamafua"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_Home_to_services"
+            app:destination="@id/services" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.mamafua.app.fragments.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_Home"
+            app:destination="@id/Home"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_to_registration"
+            app:destination="@id/registration" />
+    </fragment>
+    <fragment
+        android:id="@+id/registration"
+        android:name="com.mamafua.app.fragments.Registration"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registration_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@id/registration"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/orders"
+        android:name="com.mamafua.app.fragments.Orders"
+        android:label="Complete Request"
+        tools:layout="@layout/fragment_orders" />
+    <fragment
+        android:id="@+id/launcherscreen"
+        android:name="com.mamafua.app.fragments.Launcherscreen"
+        android:label="fragment_launcherscreen"
+        tools:layout="@layout/fragment_launcherscreen" >
+        <action
+            android:id="@+id/action_launcherscreen_to_Home"
+            app:destination="@id/Home"
+            app:popUpTo="@id/launcherscreen"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_launcherscreen_to_login"
+            app:destination="@id/login"
+            app:popUpTo="@id/launcherscreen"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/services"
+        android:name="com.mamafua.app.fragments.Services"
+        android:label="Services"
+        tools:layout="@layout/fragment_services">
+        <action
+            android:id="@+id/action_services_to_details"
+            app:destination="@id/details" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartfragment"
+        android:name="com.mamafua.app.fragments.Cartfragment"
+        android:label="Laundry basket"
+        tools:layout="@layout/fragment_cartfragment" >
+        <action
+            android:id="@+id/action_cartfragment_to_mylocation"
+            app:destination="@id/mylocation" />
+        <action
+            android:id="@+id/action_cartfragment_to_orders"
+            app:destination="@id/orders" />
+    </fragment>
+    <fragment
+        android:id="@+id/details"
+        android:name="com.mamafua.app.fragments.Details"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
+    <fragment
+        android:id="@+id/mylocation"
+        android:name="com.mamafua.app.fragments.Mylocation"
+        android:label="fragment_mylocation"
+        tools:layout="@layout/fragment_mylocation" />
+</navigation>
